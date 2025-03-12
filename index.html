@@ -22,8 +22,8 @@
     <h1>Нажми куда угодно, чтобы продолжить...</h1>
 
     <script>
-        // Ссылка на звуковой файл в твоём репозитории
-        const audioUrl = "Snd.mp3";
+        // Путь к аудиофайлу
+        const audioUrl = "sound.mp3"; // Убедись, что файл лежит в той же папке
 
         // Создаём аудио элемент
         const audio = new Audio(audioUrl);
@@ -31,17 +31,33 @@
         // Настройка зацикливания
         audio.loop = true;
 
-        // Воспроизведение звука при любом взаимодействии
+        // Функция для воспроизведения звука
+        function playAudio() {
+            audio.play().then(() => {
+                console.log("Звук воспроизводится!");
+            }).catch((error) => {
+                console.error("Ошибка воспроизведения звука:", error);
+            });
+        }
+
+        // Воспроизведение звука при клике
         document.addEventListener('click', () => {
-            audio.play();
+            playAudio();
         });
 
+        // Воспроизведение звука при нажатии клавиши
         document.addEventListener('keydown', () => {
-            audio.play();
+            playAudio();
         });
 
+        // Воспроизведение звука при движении мышкой
         document.addEventListener('mousemove', () => {
-            audio.play();
+            playAudio();
+        });
+
+        // Воспроизведение звука при касании на телефоне
+        document.addEventListener('touchstart', () => {
+            playAudio();
         });
     </script>
 </body>
