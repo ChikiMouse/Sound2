@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прикол для друзей</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20%;
+            cursor: pointer;
+        }
+        h1 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Нажми куда угодно, чтобы продолжить...</h1>
+
+    <script>
+        // Ссылка на звуковой файл в твоём репозитории
+        const audioUrl = "snd.mp3";
+
+        // Создаём аудио элемент
+        const audio = new Audio(audioUrl);
+
+        // Настройка зацикливания
+        audio.loop = true;
+
+        // Воспроизведение звука при любом взаимодействии
+        document.addEventListener('click', () => {
+            audio.play();
+        });
+
+        document.addEventListener('keydown', () => {
+            audio.play();
+        });
+
+        document.addEventListener('mousemove', () => {
+            audio.play();
+        });
+    </script>
+</body>
+</html>
