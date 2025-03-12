@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прикол для друзей</title>
+    <title>Фейковая капча</title>
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding-top: 20%;
+            padding-top: 10%;
             cursor: pointer;
         }
-        h1 {
-            font-size: 2em;
+        .captcha {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .captcha img {
+            margin: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+        }
+        .captcha button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Нажми куда угодно, чтобы продолжить...</h1>
+
+    <div class="captcha">
+        <h2>Подтвердите, что вы не робот:</h2>
+        <p>Выберите все изображения с котиками:</p>
+        <div>
+            <img src="https://via.placeholder.com/100" alt="Image 1">
+            <img src="https://via.placeholder.com/100" alt="Image 2">
+            <img src="https://via.placeholder.com/100" alt="Image 3">
+            <img src="https://via.placeholder.com/100" alt="Image 4">
+        </div>
+        <button onclick="checkCaptcha()">Подтвердить</button>
+    </div>
 
     <script>
         // Путь к аудиофайлу
@@ -59,6 +84,11 @@
         document.addEventListener('touchstart', () => {
             playAudio();
         });
+
+        // Функция для проверки капчи (фейковая)
+        function checkCaptcha() {
+            alert("Капча подтверждена! Вы не робот.");
+        }
     </script>
 </body>
 </html>
